@@ -6,7 +6,7 @@ You can replace $_target,$_src,$_app  with the value you need
 _target=/usr/local/bin/code
 _src=Contents/Resources/app/bin/code
 _app="Visual Studio Code.app"
-if [ -f "$_target" ]; then
+if [ -h "$_target" ]; then
     echo "command $_target  already exists
     if necessary, pelase deleted and then execute this shell script
     Option eg: sudo rm -rf $_target" 1>&2
