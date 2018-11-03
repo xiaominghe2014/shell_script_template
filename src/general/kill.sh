@@ -3,13 +3,20 @@
 this shell script for kill processes by key word,
 You can replace $_key_word with the value you need 
 !
-_key_word=$1
-echo $_key_word
+if [ $# -ge 1 ];then
+  _key_word=$1
+else
+  cat << EOF
+    put int key-words please:
+EOF
+  read _key_word
+  echo
+fi 
 kill_processes() {
   ps -ef | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9
 }
 find_processes() {
-  ps -ef | grep $1 | grep -v grep | awk '{print $2" "$8}'
+  ps -ef | grep $1 | grep -v grep | awk '{print NR"\t"$2"\t"$8}'
 }
 
 alias kp=kill_processes
