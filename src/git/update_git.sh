@@ -5,8 +5,8 @@ this shell script for git pull the The latest code of remote repo
 
 # 1.check arguments
 if [ $# -lt 3 ];then
-	echo "arguments error, please use script as follows"
-    echo "usage: sh ./update_git.sh [branch] [remote url] [dir]"
+	echo "arguments error, please use script as follows" 1>&2
+    echo "usage: sh ./update_git.sh [branch] [remote url] [dir]" 1>&2
     exit 1
 else
     echo "
