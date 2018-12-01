@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 : << !
 this shell script for find eg. 
+also sometimes as follow:
+find $dir -name/iname "pattern1" -o -name/iname "pattern2" | xargs grep "key words" -n
 !
 
 find_all() {
